@@ -7,27 +7,28 @@ const [error,setError] = useState("");
 /**
  * 
  */
-const getData = async () => {
-    try {
-        const res = await fetch("https://dummyjson.com/products");
-        const result  = await res.json();
-       
-        if(res.ok){
-            const capitalizeData = capitalizeTitle(result.products);
-            setData(capitalizeData);
-        }
-    } catch (error) {
-        setError(error)
-    }
-}
+
 
     useEffect(()=>{
+        const getData = async () => {
+            try {
+                const res = await fetch("https://dummyjson.com/products");
+                const result  = await res.json();
+               
+                if(res.ok){
+                    const capitalizeData = capitalizeTitle(result.products);
+                    setData(capitalizeData);
+                }
+            } catch (error) {
+                setError(error)
+            }
+        }
         getData()
-    },[]);
+    },[capitalizeTitle]);
 
     return (
         <>
-     
+        {error && error}
         <table>
             <thead>
                 <th>

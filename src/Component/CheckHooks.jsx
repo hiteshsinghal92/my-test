@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
-import Count from "./Count";
+import {  useEffect } from "react";
 
 const CheckHooks = () => {
-const [count,setCount] = useState(0)
+const count = 0;
 
 
     const handleUpdate = async () => {

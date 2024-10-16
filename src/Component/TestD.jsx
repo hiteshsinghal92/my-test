@@ -20,7 +20,7 @@ const [state,dispatch] = useReducer(dispatchEvent,0);
 
 const handleClick = useCallback(() => {
     setCount(prv => prv+1);
-},[count])
+},[])
 
 const countData = useMemo(()=>{
     return (
@@ -28,7 +28,7 @@ const countData = useMemo(()=>{
     <p>Count : {count} - {Math.random()}</p>
     <button onClick={handleClick}>Click - {Math.random()}</button>
     </>
-)},[count]);
+)},[count, handleClick]);
 
 
 const counterData = useMemo(()=>{
@@ -39,7 +39,7 @@ const counterData = useMemo(()=>{
         <button onClick={()=> setCounter(counter+1)}>Click - {Math.random()}</button>
         </>
     )
-},[counter])
+},[counter, upateD])
 
 
   return (
@@ -59,7 +59,7 @@ const counterData = useMemo(()=>{
 
 
 const ChildTest = memo(({count,handleClick}) => {
-    const {counter,setCounter} = useContext(DataContext);
+    const {counter} = useContext(DataContext);
 
     return (<>
     hello -{count} - {counter} - {Math.random()}

@@ -1,4 +1,4 @@
-import { retry } from "redux-saga/effects";
+
 
 const UpdateHoc = (Component) => {
 
@@ -15,9 +15,3 @@ const UpdateHoc = (Component) => {
 }
 
 export default UpdateHoc;
-
-// pligins // loader
-
-//cretical rendering
-//broswe cashe e tag
-// web vitak

@@ -1,4 +1,4 @@
-import { all, cancel, cancelled, put, take, takeLatest } from "redux-saga/effects";
+import { cancelled, put, takeLatest } from "redux-saga/effects";
 import { GET_USER_BY_ID, getUserSuccessAction, getUserErrorAction } from "./userSlice";
 import { getPost } from "./post.slice";
 
@@ -42,7 +42,7 @@ function* getUserSaga(action) {
 
 export function* watchGetUser() {
     console.log("watchGetUser initialized");
-   const task = yield takeLatest(GET_USER_BY_ID, getUserSaga); // Listen for the correct action
+  yield takeLatest(GET_USER_BY_ID, getUserSaga); // Listen for the correct action
   
    //yield cancel(task);
 }

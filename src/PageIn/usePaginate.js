@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 const usePaginate = (pageIndex) => {
     const [isLoading,setIsLoading] = useState(false);
     const [error,setError] = useState("");

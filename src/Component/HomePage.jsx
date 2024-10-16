@@ -17,7 +17,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const HomePage = ({ data, updateName, getUserAction }) => {
-  const inputRef = useRef();
   const inputRef1 = useRef();
   const [value, setValue] = useState("");
   const [set, setTick] = useState(1);
@@ -36,7 +35,7 @@ const HomePage = ({ data, updateName, getUserAction }) => {
       //console.log("unmount");
       dispatch({ type: "CANCEL_FETCH" });
     };
-  }, []);
+  }, [dispatch, getUserAction, set]);
   return (
     <>
       <Header/>

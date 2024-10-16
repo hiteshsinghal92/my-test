@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+
 import useFetch from "../Hooks/useFetch";
 import { FixedSizeList as List } from 'react-window';
 const Post = () => {
     const [isLoading,error,data] = useFetch('https://jsonplaceholder.typicode.com/photos');
-    const [currentPage,setCurrentPage] = useState(1);
-    const itemPerPage = 10;
+  //  const [currentPage,setCurrentPage] = useState(1);
+  //  const itemPerPage = 10;
 
     // Calculate
-    const indexofLastItem  = currentPage * itemPerPage;
-    const indexOfFirstItem  = indexofLastItem - itemPerPage;
-    const currentData = data.slice(0,indexofLastItem);
+   // const indexofLastItem  = currentPage * itemPerPage;
+    // const indexOfFirstItem  = indexofLastItem - itemPerPage;
+    // const currentData = data.slice(0,indexofLastItem);
 
-    const handleNext = () => {
-        setCurrentPage(currentPage+1)
-    }
+    // const handleNext = () => {
+    //     setCurrentPage(currentPage+1)
+    // }
 
     if (isLoading) {
         return <div>Loading...</div>;

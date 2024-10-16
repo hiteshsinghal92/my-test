@@ -6,7 +6,7 @@ const PageIn = () => {
     const [isLoading,error,data] = usePaginate(pageIndex);
    
    return (<>
-   
+    {error && error}
         {!isLoading && data && data.map((list,index)=>
             <ul key={index}>
             {list.name}

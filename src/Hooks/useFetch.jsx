@@ -5,20 +5,21 @@ const useFetch = (api) => {
   const [error, setError] = useState(false);
   const [data, setData] = useState([]);
 
-  const getData = async () => {
-    setIsLoading(true);
-    try {
-      const result = await fetch(api);
-      const response = await result.json();
-      setData(response);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+ 
 
   useEffect(() => {
+    const getData = async () => {
+      setIsLoading(true);
+      try {
+        const result = await fetch(api);
+        const response = await result.json();
+        setData(response);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
     getData();
   }, [api]);
 
